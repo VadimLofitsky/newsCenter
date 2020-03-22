@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html">
+	<title>Sandbox</title>
+    <script language="javascript" src="utils.js"></script>
+</head>
+<body>
+<script language="javascript">
+window.addEventListener("message", function(event)
+        {
+        switch(event.data.command)
+            {
+            case "calc":
+                xmlDoc = document.createElement("div");
+                xmlDoc.innerHTML = event.data.xmlText;
+
+                var id = window.eval(event.data.idEvalStr);
+                var link = window.eval(event.data.linkEvalStr);
+                var nTitle = window.eval(event.data.titleEvalStr);
+                //console.log("\ttitle = " + nTitle + "\n");
+                delete xmlDoc;
+
+                event.source.postMessage({command: "calcResponse", uid: event.data.uid, id: id, link: link, nTitle: nTitle}, "*");
+                break;
+            ///////////////////////////////////////////
+            case "parseYTQuery":
+                xmlDoc = document.createElement("div");
+                xmlDoc.innerHTML = event.data.xmlText;
+
+                var anchor = xmlDoc.$("div.yt-user-info>a");
+                anchor = anchor ? anchor : xmlDoc.$("h1 a[href*='/user/']");
+                var channelURL = anchor.href;
+                var channelTitle = anchor.innerHTML;
+                delete xmlDoc;
+
+                event.source.postMessage({command: "parseYTQueryResponse", url: channelURL, title: channelTitle}, "*");
+                break;
+            }
+        });
+</script>
+</body>
+</html>

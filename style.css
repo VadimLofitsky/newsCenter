@@ -1,0 +1,308 @@
+*
+    {
+    padding: 0;
+    margin: 0;
+    }
+
+body
+    {
+    width: 686px;
+    /*height: 700px;*/
+    padding-right: 90px;
+    background: -webkit-linear-gradient(top,white 25%,blue 50%,red 75%) no-repeat fixed;
+    font-family: Tahoma;
+    color: darkblue;
+    overflow-x: hidden;
+    }
+
+#mainContainer
+    {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    }
+
+button.button-open
+    {
+    /*height: 10%;
+    width: 100%;*/
+    height: 80px;
+    width: 683px;
+    padding: 0;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+    position: fixed;
+    left: -38.5%;
+    top: 46%;
+    }
+button.button-open>div
+    {
+    transform: rotate(0deg);
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    }
+
+table
+    {
+    /*padding-left: 10%;*/
+    padding-left: 100px;
+    }
+
+tr
+    {
+    opacity: 1;
+    transition: opacity .5s ease;
+    }
+tr.hidden
+    {
+    display: none;
+    }
+tr:hover
+    {
+    color: black !important;
+    background-color: rgba(255,255,255,0.2);
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    opacity: 1 !important;
+    }
+tr:hover *
+    {
+    color: black !important;
+    background-color: rgba(255,255,255,0.2);
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    opacity: 1 !important;
+    }
+tr.hasNews td[class*=ref]
+    {
+    background-color: rgba(255,255,0,.4);
+    opacity: 1 !important;
+    }
+tr.hasNews>td.ref-favicon>input[type=checkbox]
+    {
+    margin-left: 10px;
+    zoom: 1.5;
+    visibility: visible;
+    }
+tr:not(.hasNews)>td.ref-favicon>input[type=checkbox]
+    {
+    visibility: hidden;
+    }
+
+td
+    {
+    margin: 0 5px 0 5px;
+    padding: 0 15px 0 15px;
+    border-radius: 5px;
+    height: 36px !important;
+    }
+td.ref-watch
+    {
+    width: 48px;
+    height: 17px !important;
+    padding: 0;
+    background: url('images/eyes_96.png') 0 -33px no-repeat;
+    transition: background-position-y .5s ease;
+    }
+td.ref-watch-truee
+    {
+    width: 48px;
+    background: url('images/eyes_96.png') 0px 4px no-repeat;
+    transition: background-position-y .5s ease;
+    }
+td.ref-descr
+    {
+    padding: 0 15px 0 15px;
+    width: 200px;
+    opacity: 1;
+    font-weight: bold;
+    transition: opacity .5s ease;
+    }
+td.ref-descr.disabled
+    {
+    font-weight: lighter;
+    opacity: .3;
+    transition: opacity .5s ease;
+    }
+td.ref-descr>div
+    {
+    width: 100%;
+    overflow:  hidden;
+    font-size: 10px;
+    font-style: italic;
+    }
+td.ref-descr>div.hidden
+    {
+    display: none;
+    }
+
+td.ref-image
+    {
+    height: 36px;
+    opacity: 1;
+    transition: opacity .5s ease;
+    }
+td.ref-image.disabled
+    {
+    opacity: .3;
+    transition: opacity .5s ease;
+    }
+td.ref-image>img
+    {
+    height: 36px;
+    }
+
+tr.addRowButton
+    {
+    }
+tr.addRowButton>td
+    {
+    text-align: center;
+    color: rgba(128,128,128,.3);
+    font-weight: bold;
+    font-size: xx-large;
+    border: solid thin rgba(128,128,128,.3);
+    border-radius: 11px;
+    }
+tr.addRowButton>td:hover
+    {
+    color: rgba(255,255,255,.7);
+    border: solid thin rgba(255,255,255,.7);
+    background: -webkit-linear-gradient(top left,white -7%,transparent 17%);
+    }
+
+
+div#sourceEdit
+    {
+    position: fixed;
+    width: 75%;
+    /*height: auto;
+    /*height: 95%;*/
+    left: 12.5%;
+    top: 2.5%;
+    padding: 7px;
+    background-color: lightgray;
+    border: solid thin black;
+    border-radius: 11px;
+    z-index: 9999;
+    overflow: auto;
+    box-shadow: 0 0 100px;
+    }
+div#sourceEdit.sourceEditHidden
+    {
+    display: none;
+    }
+div#sourceEditPatterns
+    {
+    float: right;
+    padding-right: 2.5%;
+    }
+div#sourceEditPatterns>button[id*=sourceEditPatterns]
+    {
+    width: 24px;
+    height: 24px;
+    background-color: lightgray;
+    border: solid thin transparent;
+    border-radius: 3px;
+    margin: 0 2px 0 2px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    }
+div#sourceEditPatterns>button[id*=sourceEditPatterns]:hover
+    {
+    border-color: gray;
+    }
+div#sourceEditPatterns>button#sourceEditPatternsEmpty
+    {
+    background-image: url('images/icon_empty.png');
+    }
+div#sourceEditPatterns>button#sourceEditPatternsRSS
+    {
+    background-image: url('images/icon_rss.png');
+    }
+div#sourceEditPatterns>button#sourceEditPatternsLJ
+    {
+    background-image: url('images/icon_lj.png');
+    }
+div#sourceEditPatterns>button#sourceEditPatternsYoutube
+    {
+    background-image: url('images/icon_youtube.png');
+    }
+div#sourceEdit hr.sourceEditSeparator
+    {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    }
+div#sourceEdit input[type=text]:not(.number)
+    {
+    width: 95%;
+    margin-left: 2.5%;
+    border-radius: 5px;
+    }
+div#sourceEdit textarea
+    {
+    width: 95%;
+    margin-left: 2.5%;
+    border-radius: 5px;
+    }
+div#sourceEdit button
+    {
+    width: 25%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    border-radius: 7px;
+    }
+
+div#sourceEditWatchDiv
+    {
+    opacity: 1;
+    transition: opacity .3s ease;
+    }
+div#sourceEditWatchDiv.sourceWatchDisabled>*
+    {
+    opacity: .1;
+    transition: opacity .3s ease;
+    }
+div#sourceEditWatchDiv.sourceWatchDisabled>*:hover,div#sourceEditWatchDiv.sourceWatchDisabled>*:focus
+    {
+    opacity: 1;
+    transition: opacity .3s ease;
+    }
+
+div#hoverMenu
+    {
+    position: absolute;
+    z-index: 9999;
+    padding: 5px;
+    background-color: lightyellow;
+    border: solid thin darkgray;
+    border-radius: 5px;
+    overflow: auto;
+    font-style: italic;
+    cursor: pointer;
+    }
+div#hoverMenu.hoverMenuHidden
+    {
+    display: none;
+    }
+
+div#hoverMenu>img
+    {
+    margin: 0;
+    border: dotted thin lightyellow;
+    border-radius: 3px;
+    }
+div#hoverMenu>img:hover
+    {
+    border-color: gray;
+    }
+div#hoverMenu>#hoverMenuTitle
+    {
+    margin-top: 5px;
+    font-size: smaller;
+    }

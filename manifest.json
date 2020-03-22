@@ -1,0 +1,48 @@
+{
+   "manifest_version": 2,
+   "name": "НОВОСТИ",
+   "description": "Агрегатор новостей",
+   "version": "1.0",
+
+   "permissions": [ "storage", "tabs", "alarms", "tts", "chrome://favicon/*", "http://*/*" ],
+
+   "icons":
+        {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+        },
+
+   "browser_action":
+        {
+        "default_icon":
+            {
+            "19": "icon19.png",
+            "38": "icon38.png"
+            },
+        "default_title": "НОВОСТИ",
+        "default_popup": "popup.html"
+        },
+
+    "background":
+        {
+        "scripts": ["background.js"],
+        "persistent": true
+        },
+
+    "sandbox":
+        {
+        "pages": ["sandbox.html"]
+        },
+
+    "web_accessible_resources":
+        [
+        "style.css",
+        "utils.js",
+        "main.js",
+        "handlers.js",
+        "sourceEditWindow.js",
+        "icon19_2.png",
+        "sndMsg.wav","cuckoo.ogg","digital.ogg","metal.ogg","ringing.ogg"
+        ]
+}

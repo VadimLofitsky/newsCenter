@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script language="javascript" src="utils.js"></script>
+    <script language="javascript" src="main.js"></script>
+    <script language="javascript" src="handlers.js"></script>
+    <script language="javascript" src="sourceEditWindow.js"></script>
+</head>
+
+<body>
+<div id="mainContainer">
+    <button class='button-open'><div>&lt;&lt;&lt; Открыть &gt;&gt;&gt;</div></button>
+    <table id="refs"><tbody></tbody></table>
+</div>
+
+<div id="sourceEdit" class="sourceEditHidden">
+    <div id="sourceEditPatterns">
+        <button id="sourceEditPatternsEmpty">&nbsp;</button>
+        <button id="sourceEditPatternsRSS">&nbsp;</button>
+        <button id="sourceEditPatternsLJ">&nbsp;</button>
+        <button id="sourceEditPatternsYoutube">&nbsp;</button>
+    </div><br>
+    URL:<br>
+    <input type="text" id="sourceEditURL" maxlength="512"><br>
+    Описание:<br>
+    <input type="text" id="sourceEditTitle" maxlength="512"><br>
+    Изображение:<br>
+    <input type="text" id="sourceEditImage" maxlength="512"><br>
+    <hr class="sourceEditSeparator">
+    <input type="checkbox" id="sourceEditIsAir">&nbsp;Эфир
+    <hr class="sourceEditSeparator">
+    <input type="checkbox" id="sourceEditWatch">&nbsp;Отслеживать
+    <div id="sourceEditWatchDiv">
+        <span>Время обновления (мин):</span>&nbsp;<input type="text" id="sourceEditWatchTime" min="0" max="100000" step="1" class="number" maxlength="5"><br>
+        <p>Источник:</p><br>
+        <input type="text" id="sourceEditWatchSrc" maxlength="128"><br>
+    
+        <br><p>Идентификатор. Eval string:</p><br>
+        <textarea id="sourceEditWatchIDEvalStr" maxlength="512" placeholder="'xmlDoc' - имя объекта парсинга (напр., xmlDoc.querySelector(...))"></textarea><br>
+    
+        <br><p>Ссылка. Eval string:</p><br>
+        <textarea id="sourceEditWatchLinkEvalStr" maxlength="512" placeholder="'xmlDoc' - имя объекта парсинга (напр., xmlDoc.querySelector(...))"></textarea><br>
+    
+        <br><p>Заголовок. Eval string:</p><br>
+        <textarea id="sourceEditWatchTitleEvalStr" maxlength="512" placeholder="'xmlDoc' - имя объекта парсинга (напр., xmlDoc.querySelector(...))"></textarea><br>
+    </div>
+    <hr class="sourceEditSeparator">
+    <button id="sourceEditButtonSave">Сохранить</button><button id="sourceEditButtonCancel">Отмена</button>
+</div>
+
+<div id="hoverMenu" class="hoverMenuHidden" data-currentRecordIndex>
+    <img id="hoverMenuOpen"     src="images/hoverMenuOpen_false.png" data-fnamemask="images/hoverMenuOpen_@.png" title="Открывать">
+    <img id="hoverMenuWatch"    src="images/hoverMenuWatch_false.png" data-fnamemask="images/hoverMenuWatch_@.png" title="Следить">
+    <img id="hoverMenuUp"       src="images/hoverMenuArrowUp.png" title="Выше">
+    <img id="hoverMenuDown"     src="images/hoverMenuArrowDown.png" title="Ниже">
+    <img id="hoverMenuEdit"     src="images/hoverMenuEdit.png" title="Редактировать">
+    <img id="hoverMenuDel"      src="images/hoverMenuDel.png" title="Удалить"><br>
+    <div id="hoverMenuTitle"    style="width: 100%;" data-link=""></div>
+</div>
+</body>
+</html>
+<!--
+        Время обновления (мин):&nbsp;<input type="text" id="sourceEditWatchTime" min="0" max="100000" step="1" class="number" maxlength="5"><br>
+        Источник:<br>
+        <input type="text" id="sourceEditWatchSrc" maxlength="128"><br>
+    
+        <br>Идентификатор. Eval string:<br>
+        <textarea id="sourceEditWatchIDEvalStr" maxlength="512" placeholder="'xmlDoc' - имя объекта парсинга (напр., xmlDoc.querySelector(...))"></textarea><br>
+    
+        <br>Ссылка. Eval string:<br>
+        <textarea id="sourceEditWatchLinkEvalStr" maxlength="512" placeholder="'xmlDoc' - имя объекта парсинга (напр., xmlDoc.querySelector(...))"></textarea><br>
+    
+        <br>Заголовок. Eval string:<br>
+        <textarea id="sourceEditWatchTitleEvalStr" maxlength="512" placeholder="'xmlDoc' - имя объекта парсинга (напр., xmlDoc.querySelector(...))"></textarea><br>
+-->
+
+<!--
+url
+title
+image
+isAir
+watch
+updateTime
+sourceMode
+sourceRSS
+
+sourceElementCSSSelector
+sourceElementCSSSelectorIndex
+sourceElementRegExp
+sourceElementRegExpIndex
+
+sourceElementIDCSSSelector
+sourceElementIDCSSSelectorIndex
+sourceElementIDRegExp
+sourceElementIDRegExpIndex
+-->
+
